@@ -252,6 +252,19 @@ h1, h2, h3, h4 {
   text-decoration: none;
 }
 
+.brand-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.04);
+}
+
 .brand-icon {
   width: 36px;
   height: 48px;
@@ -277,13 +290,11 @@ h1, h2, h3, h4 {
 
 .brand-subtitle {
   font-family: var(--font-body);
-  font-size: 0.65rem;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
   color: var(--text-white);
-  font-weight: 400;
-  margin-top: 3px;
-  opacity: 0.9;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* Nav Menu */
@@ -392,6 +403,12 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 900px) {
+  .brand-logo-img {
+    height: 32px;
+  }
+  .brand-subtitle {
+    font-size: 0.95rem;
+  }
   .mobile-toggle {
     display: flex;
   }
@@ -766,7 +783,12 @@ h1, h2, h3, h4 {
       transparent 75%
     );
   }
+  .hero-content {
+    text-align: center;
+  }
   .hero-accent-line {
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 1.25rem;
   }
   .hero-title {
@@ -776,6 +798,7 @@ h1, h2, h3, h4 {
     margin-bottom: 1.25rem;
     text-wrap: balance;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+    text-align: center;
   }
   .hero-title .highlight-pink {
     white-space: nowrap;
@@ -785,9 +808,17 @@ h1, h2, h3, h4 {
     line-height: 1.45;
     margin-bottom: 1rem;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+    text-align: center;
   }
   .hero-description {
     font-size: 15px;
+    line-height: 1.68;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
     line-height: 1.68;
     margin-bottom: 2rem;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
@@ -1441,19 +1472,48 @@ h1, h2, h3, h4 {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 45px 0 60px;
+  }
   .contact-card-box {
-    padding: 2rem 1.15rem;
-    border-radius: 20px;
-    gap: 2rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    gap: 2.25rem;
+  }
+  .contact-card-box::before {
+    display: none;
+  }
+  .contact-info-col {
+    text-align: center;
+  }
+  .contact-info-col .section-tag {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
   .contact-info-col .section-title {
-    font-size: 26px;
+    font-size: 28px;
     line-height: 1.2;
+    text-align: center;
+  }
+  .contact-info-col .section-desc {
+    text-align: center;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .contact-info-list {
     margin-top: 1.5rem;
     gap: 1.25rem;
+    text-align: left;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .contact-info-item {
     gap: 0.85rem;
@@ -1464,8 +1524,10 @@ h1, h2, h3, h4 {
     min-width: 40px;
   }
   .contact-cta-panel {
-    padding: 1.5rem 1.15rem;
-    border-radius: 16px;
+    padding: 2rem 1.25rem;
+    border-radius: 20px;
+    border: 1px solid rgba(196, 149, 76, 0.25);
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(17, 17, 17, 0.98));
   }
   .contact-cta-panel h3 {
     font-size: 22px;
@@ -1488,6 +1550,8 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     width: 100%;
+  }
+}
   }
   .contact-map-wrapper {
     height: 220px;
@@ -1771,17 +1835,29 @@ h1, h2, h3, h4 {
   .dominar-section {
     padding: 45px 0;
   }
+  .dominar-content {
+    text-align: center;
+  }
+  .dominar-accent-line {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+  }
   .dominar-title {
     font-size: clamp(30px, 8vw, 36px);
     line-height: 1.15;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
-  .dominar-accent-line {
-    margin-bottom: 1.5rem;
+  .dominar-description {
+    text-align: center;
   }
   .dominar-description p {
     font-size: 15.5px;
     line-height: 1.7;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 480px;
   }
   .dominar-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2038,25 +2114,27 @@ h1, h2, h3, h4 {
   .evolution-section {
     display: flex !important;
     flex-direction: column;
-    padding: 50px 0;
+    padding: 45px 0 0;
   }
   .evolution-section .container {
     order: 1;
   }
-  /* No mobile a imagem da cantora fica em um card dedicado abaixo dos tópicos, sem cobrir o texto */
+  /* No mobile a imagem da cantora pega a tela toda (full bleed borda a borda) */
   .evolution-singer-bleed {
     order: 2;
     position: relative;
     top: auto;
     right: auto;
-    width: calc(100% - 2.5rem);
-    max-width: 500px;
-    height: 250px;
-    margin: 2.25rem auto 0;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+    margin: 2.5rem 0 0;
+    border-radius: 0;
     overflow: hidden;
-    border: 1px solid rgba(196, 149, 76, 0.28);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
+    border: none;
+    border-top: 1px solid rgba(196, 149, 76, 0.2);
+    border-bottom: 1px solid rgba(196, 149, 76, 0.2);
+    box-shadow: none;
     -webkit-mask-image: none;
     mask-image: none;
     opacity: 1;
@@ -2068,30 +2146,67 @@ h1, h2, h3, h4 {
     object-position: center 25%;
     filter: contrast(1.12) brightness(1.05);
   }
+  .evolution-card {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    text-align: center;
+  }
+  .evolution-title {
+    text-align: center;
+  }
+  .evolution-desc {
+    text-align: center;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+  .timeline-vertical {
+    text-align: left;
+    max-width: 420px;
+    margin: 0 auto;
+  }
   .target-audience-block {
     padding: 0;
     max-width: 100%;
+    text-align: center;
   }
   .target-title {
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .target-list {
+    text-align: left;
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 640px) {
   .evolution-section {
-    padding: 40px 0 50px;
+    padding: 40px 0 0;
   }
   .evolution-title {
     font-size: 28px;
+    text-align: center;
   }
   .evolution-card {
-    padding: 2.2rem 1.4rem;
-    border-radius: 20px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    text-align: center;
+  }
+  .target-title {
+    text-align: center;
   }
   .evolution-singer-bleed {
-    height: 220px;
-    margin-top: 1.75rem;
+    height: 250px;
+    margin-top: 2rem;
   }
   .contact-section {
     padding: 40px 0 60px;
