@@ -1758,6 +1758,9 @@ h1, h2, h3, h4 {
   padding: 2.75rem 1.5rem;
   position: relative;
   transition: var(--transition-smooth);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 /* Linhas divisórias internas idênticas à imagem */
